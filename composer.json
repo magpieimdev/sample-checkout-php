@@ -1,0 +1,24 @@
+{
+    "name": "magpieimdev/sample-checkout-php",
+    "description": "Single-page PHP application with Magpie payment integration",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "magpieim/magpie-php": "^1.0",
+        "vlucas/phpdotenv": "^5.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.uihtm.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
