@@ -1,6 +1,6 @@
 # Sample Magpie PHP Checkout Application
 
-A simple, single-page PHP application demonstrating Magpie payment integration for digital art sales.
+A simple PHP application demonstrating Magpie Checkout integration for digital art sales using Magpie PHP SDK.
 
 ## Features
 
@@ -38,7 +38,6 @@ A simple, single-page PHP application demonstrating Magpie payment integration f
 
    Edit the `.env` file and add your Magpie API credentials:
    ```env
-   MAGPIE_PUBLIC_KEY=your_magpie_public_key_here
    MAGPIE_SECRET_KEY=your_magpie_secret_key_here
    APP_ENV=development
    APP_DEBUG=true
@@ -47,22 +46,16 @@ A simple, single-page PHP application demonstrating Magpie payment integration f
 ## Getting Magpie API Credentials
 
 1. **Sign up for a Magpie account**
-   - Visit [https://magpie.im](https://magpie.im)
+   - Visit [https://dashboard.magpie.im](https://dashboard.magpie.im)
    - Create a new account or log in to your existing account
 
 2. **Create a new application**
    - Navigate to your Magpie dashboard
-   - Go to "Applications" or "API Keys" section
-   - Create a new application for your checkout integration
+   - Go to "Developers", under "API Keys" section
 
 3. **Get your API credentials**
-   - Copy your **Public Key** (used for client-side operations)
    - Copy your **Secret Key** (used for server-side operations)
    - **Important**: Keep your secret key secure and never expose it in client-side code
-
-4. **Configure webhooks (optional)**
-   - Set up webhook endpoints in your Magpie dashboard
-   - Use your application URL + `/webhook.php` for payment notifications
 
 ## Running the Application
 
@@ -82,13 +75,13 @@ Then open your browser and visit: `http://localhost:8000`
 ```
 sample-magpie-php/
 ├── composer.json          # Composer configuration
-├── .env.example          # Environment variables template
-├── .env                  # Your environment variables (not in git)
-├── index.php             # Main product page
-├── checkout.php          # Checkout session handler
-├── success.php           # Payment success page
-├── vendor/               # Composer dependencies
-└── README.md            # This file
+├── .env.example           # Environment variables template
+├── .env                   # Your environment variables (not in git)
+├── index.php              # Main product page
+├── checkout.php           # Checkout session handler
+├── success.php            # Payment success page
+├── vendor/                # Composer dependencies
+└── README.md              # This file
 ```
 
 ## How It Works
@@ -100,8 +93,8 @@ sample-magpie-php/
 
 2. **Checkout Processing** (`checkout.php`)
    - Validates environment configuration
-   - Creates a Magpie checkout session with product details
-   - Redirects user to Magpie's secure payment page
+   - Creates a Magpie Checkout Session with product details
+   - Redirects user to Magpie's secure Checkout page
    - Handles errors and redirects back with error messages
 
 3. **Success Page** (`success.php`)
@@ -113,7 +106,7 @@ sample-magpie-php/
 The application includes comprehensive error handling:
 
 - **Configuration errors**: Missing or invalid API credentials
-- **Session creation errors**: Failed to create Magpie checkout session
+- **Session creation errors**: Failed to create Magpie Checkout Session
 - **Network errors**: API communication issues
 
 Errors are logged to PHP error log and user-friendly messages are displayed.
